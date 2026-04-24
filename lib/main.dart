@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
 import 'package:sqlite/bloc/user_bloc.dart';
 import 'package:sqlite/bloc/user_event.dart';
 import 'package:sqlite/data/repositories/user_repository_impl.dart';
 import 'package:sqlite/helper/database_helper.dart';
 import 'package:sqlite/pages/home_page.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await init();
 
   final dbHelper = DatabaseHelper();
   final userRepository = UserRepositoryImpl(dbHelper);

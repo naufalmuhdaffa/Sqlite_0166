@@ -21,8 +21,11 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 final user = state.users[index];
                 return ListTile(
+                  isThreeLine: true,
                   title: Text(user.name),
-                  subtitle: Text(user.email),
+                  subtitle: Text(
+                    '${user.email}\n${user.noTelpon}\n${user.alamat}',
+                  ),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [

@@ -30,6 +30,12 @@ android {
         versionName = flutter.versionName
     }
 
+    packaging {
+        resources {
+            pickFirsts += "com/google/i18n/phonenumbers/data/**"
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
